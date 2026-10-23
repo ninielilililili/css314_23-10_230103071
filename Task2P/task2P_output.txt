@@ -1,0 +1,8 @@
+Student ID : 230103071
+Points     : 40,000,000 | threads: 4
+Seeds      : [2301030710, 2301030711, 2301030712, 2301030713]
+
+Shared PRNG (locked)  : pi = 3.14161390  error = 0.00002125  time = 492.6 ms
+Independent PRNGs     : pi = 3.14128500  error = 0.00030765  time = 225.5 ms
+
+Speedup from removing the lock: 2.18x
