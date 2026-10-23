@@ -1,1 +1,2 @@
-# css314_23-10_230103071
+#Nurailym Nurlankyzy
+1-N,02-P
