@@ -1,0 +1,20 @@
+
+Student ID       : 230103071
+OS               : Windows 11
+Logical cores    : 24
+Matrix           : 1024x1024 float64 (8.4 MB each) | median of 3 runs
+Mode             : CPU tiled multiply (no dedicated GPU path)
+
+Variant        | Tile working set       | 1 thread (ms) |  ns/FMA | Est. stall ns/FMA | 24 threads (ms) |  GFLOP/s
+------------------------------------------------------------------------------------------------------------------
+Non-tiled ijk  | n/a (B column stride)  |        3527.9 |    3.29 |              3.14 |           534.3 |      4.0
+Non-tiled ikj  | n/a (B row = 8 KB)     |         159.0 |    0.15 |              0.00 |            69.6 |     30.8
+Tiled 16x16    | 6 KB (L1)              |         224.6 |    0.21 |              0.06 |            95.1 |     22.6
+Tiled 64x64    | 96 KB (L2)             |         165.7 |    0.15 |              0.01 |            73.4 |     29.3
+
+======================================================================
+Fastest single-thread variant: Non-tiled ikj  (159.0 ms)
+Non-tiled ijk vs Non-tiled ikj: 22.2x slower single-thread, 7.7x slower with 24 threads
+Stall column = extra time per multiply-add vs the fastest variant (estimate,
+not a hardware cache-miss counter).
+======================================================================
