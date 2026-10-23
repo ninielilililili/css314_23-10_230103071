@@ -1,0 +1,6 @@
+Student ID : 230103071
+Array size : 2,000,000 | threads: 4
+Last value : serial = 11005212 | parallel = 11005212
+
+Serial Time (ms) | Parallel Time (ms) | Speedup | Verification
+            1.92 |               9.98 |   0.19x | PASS
