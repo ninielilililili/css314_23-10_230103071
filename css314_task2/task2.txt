@@ -1,0 +1,17 @@
+Student ID       : 230103071
+OS               : Windows 11
+Logical cores    : 24
+Array size       : 20,000,000 float64 (seed = 230103071)
+Worker counts    : [1, 2, 4, 24, 48]
+Amdahl P         : 0.95   |   median of 7 runs per row
+
+ Cores | Wall Time (ms) |  Speedup | Amdahl Upper Bound
+-------------------------------------------------------
+     1 |         13.225 |    1.00x |              1.00x
+     2 |          5.476 |    2.42x |              1.90x
+     4 |          6.222 |    2.13x |              3.48x
+    24 |          5.840 |    2.26x |             11.16x
+    48 |          5.348 |    2.47x |             14.33x
+
+Amdahl limit as p -> infinity: 20.00x
+Sum check (p=1 vs p=48): 10001531.149388 vs 10001531.149388
