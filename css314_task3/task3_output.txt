@@ -1,0 +1,10 @@
+Student ID       : 230103071
+OS               : Windows 11
+Logical cores    : 24
+Threads used (N) : 12  (physical cores)
+Increments/thread: 50,000,000   |   median of 3 runs
+
+Unpadded Shared :      374.7 ms   (runs: 460, 375, 294)
+Padded (128 B)  :      175.6 ms   (runs: 192, 175, 176)
+
+Execution ratio (Unpadded / Padded): 2.13x slower when unpadded
