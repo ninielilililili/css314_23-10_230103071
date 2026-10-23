@@ -1,0 +1,11 @@
+Student ID       : 230103071
+OS               : Windows 11
+Logical cores    : 24
+Worker threads   : 12 (physical cores)
+Matrix           : 8000x8000 float64 (512 MB, seed = 230103071)
+Timing           : median of 5 runs
+
+Mode A (row-major, linear)     :       12.0 ms   sum = 32001060.8155
+Mode B (column-major, strided) :      106.5 ms   sum = 32001060.8155
+
+Cache penalty factor (Mode B / Mode A): 8.88x
