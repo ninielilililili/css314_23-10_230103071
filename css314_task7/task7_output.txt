@@ -1,0 +1,25 @@
+
+Student ID       : 230103071
+OS               : Windows 11
+Max logical cores: 24
+Array            : 30,000,000 float64 (240 MB per array) | median of 5 runs
+
+Kernel A (copy, memory-bound)
+ Cores |  Time (ms) |  Speedup | Efficiency | BW (GB/s)
+-------------------------------------------------------
+     1 |       18.9 |    1.00x |       1.00 |      25.4
+     2 |       11.5 |    1.65x |       0.83 |      41.9
+    24 |       11.1 |    1.71x |       0.07 |      43.3
+
+Kernel B (sin*cos+tan, compute-bound)
+ Cores |  Time (ms) |  Speedup | Efficiency
+-------------------------------------------
+     1 |      954.9 |    1.00x |       1.00
+     2 |      726.2 |    1.31x |       0.66
+    24 |      190.8 |    5.00x |       0.21
+
+======================================================================
+VERDICT: Kernel A (copy) stalled in scaling: efficiency 0.07 at 24 cores
+         vs 0.21 for Kernel B. Adding cores did not add memory bandwidth:
+         Kernel A is limited by memory-channel saturation, not by the CPU.
+======================================================================
