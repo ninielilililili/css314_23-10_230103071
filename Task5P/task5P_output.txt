@@ -1,0 +1,18 @@
+Student ID    : 230103071
+Logical cores : 24
+Tasks         : 10,000 x 500 hash rounds over 1KB
+Pool sizes    : [1, 12, 24, 48, 96, 256, 384]
+Timing        : median of 3 runs
+
+Pool Size | Execution Time (ms) | Speedup vs 1 thread | Status
+---------------------------------------------------------------------------
+        1 |              8272.4 |               1.00x | still improving
+       12 |              2196.9 |               3.77x | still improving
+       24 |               783.3 |              10.56x | still improving
+       48 |               742.8 |              11.14x | BEST
+       96 |               842.1 |               9.82x | <-- starts WORSENING
+      256 |              1161.8 |               7.12x | degraded
+      384 |               966.2 |               8.56x | degraded
+
+Fastest pool size: 48 (742.8 ms)
+Execution time starts getting worse at pool size 96 (842.1 ms, 1.13x the best).
