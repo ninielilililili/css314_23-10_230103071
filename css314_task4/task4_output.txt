@@ -1,0 +1,18 @@
+
+OS               : Windows 11
+Items / workers  : 1000 / 4
+Per-run reports  : median of 5 runs
+
+=== Workload: spec      cost = 0.0001*(i % 20)   (ideal = total cost / 4 = 237.5 ms)
+Strategy               | Total (ms) | Finish delta (ms)
+-------------------------------------------------------
+A: Static (4 blocks)   |      326.0 |              11.2
+B: Dynamic chunk=1     |      317.5 |               1.5
+B: Dynamic chunk=5     |      331.2 |               7.6
+
+=== Workload: clustered cost = 0.0001*(i // 50)   (ideal = total cost / 4 = 237.5 ms)
+Strategy               | Total (ms) | Finish delta (ms)
+-------------------------------------------------------
+A: Static (4 blocks)   |      505.7 |             382.5
+B: Dynamic chunk=1     |      317.4 |               1.6
+B: Dynamic chunk=5     |      319.0 |               8.6
